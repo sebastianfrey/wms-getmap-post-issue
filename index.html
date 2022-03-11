@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FeatureLayer Rendering Issue</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+  <div id="map" style="background:#fefefe;"></div>
+  <div id="description" style="width:400px;background:white;border:1px solid #CCCCCC;padding:16px;">
+    <p>
+      This sample Application demonstrates that GetMap requests in the ArcGIS JS API v4 are sent as invalid encoded
+      POST
+      request, when the GetMap request URL exceeds the configured maxUrlLength of <a
+        href="https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#request"
+        target="_blank">@arcgis/core/config</a>
+    </p>
+
+    <p>The maxUrlLength in this sample is set to 400 which will lead in most cases to invalid GetMap requests.</p>
+
+    <p>Note: This is just for demo purpose, to enforce POST for GetMap requests.</p>
+  </div>
+</body>
+<script type="module" src="./index.mjs"></script>
+
+</html>
