@@ -10,6 +10,8 @@
 <body>
   <div id="map" style="background:#fefefe;"></div>
   <div id="description" style="width:400px;background:white;border:1px solid #CCCCCC;padding:16px;">
+    <h4>Info:</h4>
+
     <p>
       This sample Application demonstrates that GetMap requests in the ArcGIS JS API v4 are sent as invalid encoded
       POST
@@ -21,6 +23,29 @@
     <p>The maxUrlLength in this sample is set to 400 which will lead in most cases to invalid GetMap requests.</p>
 
     <p>Note: This is just for demo purpose, to enforce POST for GetMap requests.</p>
+
+    <h4>Layer selection:</h4>
+
+    <form style="display:flex;flex-direction:column;width:100%;" id="layerForm" onsubmit="return false;">
+      <div style="display:flex;flex:1;margin-bottom:8px;">
+        <input type="radio" name="url" id="wmsWithoutPostCapabilities" checked
+          value="https://sgx.geodatenzentrum.de/wms_topplus_open" /><label
+          for="wmsWithoutPostCapabilities">WMS TopPlusOpen (Supports only GET)</label>
+      </div>
+      <div style="display:flex;flex:1;margin-bottom:8px;">
+        <input type="radio" name="url" id="wmsWithPostCapabilities"
+          value="https://sdmdataaccess.nrcs.usda.gov/Spatial/SDM.wms" /><label
+          for="wmsWithPostCapabilities">RCS Soil Data Mart Data Access Web Map Service (Supports GET and POST)</label>
+      </div>
+      <div style="display:flex;flex:1;margin-bottom:8px;justify-content:space-around;"><input type="radio" name="url"
+          id="customWms" value="https://ows.terrestris.de/osm/service"><input type="text" id="urlInput" style="flex:1"
+          value="https://ows.terrestris.de/osm/service"
+          onchange="document.getElementById('customWms').value = document.getElementById('urlInput').value" />
+      </div>
+      <div style="display:flex;flex:1;margin-top:16px;justify-content:flex-end;">
+        <button width="auto" id="loadLayerButton">Load layer</button>
+      </div>
+    </form>
   </div>
 </body>
 <script type="module" src="./index.mjs"></script>
