@@ -4,6 +4,7 @@ import MapView from "https://js.arcgis.com/next/@arcgis/core/views/MapView.js";
 import WMSLayer from "https://js.arcgis.com/next/@arcgis/core/layers/WMSLayer.js";
 import LayerList from "https://js.arcgis.com/next/@arcgis/core/widgets/LayerList.js";
 
+// set to 400 to reproduce issue
 esriConfig.request.maxUrlLength = 400;
 
 const map = new Map({
